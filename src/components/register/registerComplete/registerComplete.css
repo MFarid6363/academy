@@ -1,0 +1,36 @@
+.RegisterComplete{
+    padding: 1rem;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.178) ,rgba(0, 0, 0, 0.123)),url('../img/registerback.jpg');
+    background-size: 100% 100%;
+}
+.RegisterComplete__icon{
+    display: block;
+    margin: auto;
+    font-size: 6rem;
+    color: rgba(17, 196, 17, 0.418);
+}
+.RegisterComplete span{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.RegisterComplete ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.RegisterComplete ul li{
+    margin: 1rem;
+}
+.RegisterComplete ul li button{
+    font-size: 1rem;
+    padding: 6px 14px;
+    border-radius: 55px;
+    background-color: rgba(204, 204, 204, 0.274);
+    color: white;
+    cursor: pointer;
+}
+.RegisterComplete ul li button:hover{
+    transform: translateY(-1px) scale(.98);
+    transition: transform .5s;
+    backface-visibility: hidden;
+}

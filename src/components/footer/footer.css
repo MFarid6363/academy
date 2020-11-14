@@ -1,0 +1,41 @@
+
+.footer{
+    background-color: #0cbaba;
+    background-image: linear-gradient(45deg, #0cbaba 0%, #380036 74%);
+    color: white;
+    height: 20vh;
+}
+.footer .our-info{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;    
+}
+
+.our-info__logo{
+    width: 6rem;
+    border-radius: 100px;
+    align-self: center;
+    list-style: none;
+    
+ 
+}
+.our-info__about-us{
+    align-self: center;
+}
+ 
+.our-info__social{
+    align-self: center;
+}
+.social__links{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.our-info-links{
+    margin:.2rem 0;
+    cursor: pointer;
+}
+
+.our-info-links a{
+    color: white;
+}

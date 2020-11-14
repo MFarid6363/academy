@@ -1,0 +1,22 @@
+
+.Registration__Modal .Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: rgba(255, 255, 255, 0.336);
+    width: 80%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    /* padding: 16px; */
+    left: 5%;
+    top: 15%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    border-radius: 4px;
+}
+
+@media (min-width: 600px) {
+    .Registration__Modal .Modal {
+        width: 60%;
+        left: 20%;
+    }
+}

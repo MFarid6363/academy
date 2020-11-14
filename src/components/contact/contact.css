@@ -1,0 +1,15 @@
+.contact__call-numbers{
+    position: absolute;
+    background-color: rgba(197, 197, 197, 0.692);
+    top: 77%;
+    left: 55%;
+    padding: 5px;
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%,10% 90% ,10% 0%);
+}
+.contact__call-numbers ul{
+    list-style: none;
+}
+.contact__call-numbers ul li{
+    margin: 4px;
+    margin-left:15px;
+}

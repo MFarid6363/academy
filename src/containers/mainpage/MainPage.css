@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.MainPage{
+    position: relative;
+    background-image: linear-gradient(#5f0a875e ,#a4508b5d
+    ),url('./img/Main.jpg');
+    background-size: cover;
+    height: 100vh;
+    margin:auto;
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction:column;
+}
+.MainPage h1{
+    font-family: 'Grandstander', cursive;
+    margin-top:5rem;
+    font-size: 3rem;
+    color: white;
+}
+    
+.MainPage__Navigation{
+    display: flex;
+    list-style: none;
+    align-self: flex-end;
+    align-items: center;
+    margin-top: 1rem;
+}
+.MainPage__Navigation :nth-child(2){
+    margin-right: 2rem;
+}
+.MainPage__Navigation li{
+    padding-right: 2rem;
+}
+.MainPage__Navigation li button{
+    padding:10px 15px;
+    border-radius: 55px;
+    background-color: white;
+    color: rgb(197, 114, 83);
+    font-size: 1rem;
+    border:none;
+    outline: none;
+}
+.MainPage__Navigation li button:hover{
+    animation: MoveLeft 1s ;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.footer{
+    margin-top: auto;
+}
+
+
+@keyframes MoveLeft{
+    0%{
+        transform: translateY(0px);
+    }
+    
+    50%{
+        transform: translateY(-3px);
+    }
+
+    100%{
+        transform: translateY(-0px);
+    }
+}
+
+.example-enter {
+    opacity: 0.01;
+    border: 1px solid red;
+}
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: all 2s ease 0s;
+    border: 1px solid orange;
+}
+.example-leave {
+    opacity: 1;
+    border: 1px solid green;
+}
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: all 3s ease 0s;
+    border: 1px solid blue;
+}
+.example-appear {
+    opacity: 0.01;
+}
+.example-appear.example-appear-active {
+    opacity: 1;
+    transition: all 2s ease 0s;
+}

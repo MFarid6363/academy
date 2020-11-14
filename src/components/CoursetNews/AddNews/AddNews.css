@@ -1,0 +1,23 @@
+.AddNews{
+    display: flex;
+    justify-content: center;
+}
+.AddNews__Form{
+    display: block;
+    
+}
+.AddNews__Form ul{
+    list-style: none;
+}
+.AddNews__Form li{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.AddNews__Form li>*{
+    margin-bottom: 10px;
+}
+.AddNews__Form li textarea{
+    resize: none;
+}
+

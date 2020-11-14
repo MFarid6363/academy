@@ -1,0 +1,7 @@
+.Course-Teachers{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    background-color: #f3f2f8;
+}

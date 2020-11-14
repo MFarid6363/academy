@@ -1,0 +1,33 @@
+.particularCoursenav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5rem;
+    align-items: center;
+    background-color: #24476F;
+    color: white;
+}
+.particularCoursenav .AccountBar__AccountName{
+    font-family: 'Krona One', sans-serif;
+    font-size: 14px;
+}
+.particularCoursenav ul{
+    flex-basis: 50%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-left: auto;
+}
+.particularCoursenav ul li{
+    color: white;
+    text-decoration: none;
+    font-family: 'Krona One', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+.particularCoursenav ul li:hover{
+    color: #00AEEF;
+}
+.particularCoursenav ul .isactive{
+    color: #00AEEF;
+}
+

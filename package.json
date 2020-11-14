@@ -1,0 +1,37 @@
+{
+  "name": "react-complete-guide",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@opuscapita/filemanager-server": "^1.1.1",
+    "@types/react-transition-group": "^4.4.0",
+    "axios": "^0.20.0",
+    "pure-react-carousel": "^1.27.6",
+    "react": "^16.14.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.14.0",
+    "react-file-picker": "0.0.6",
+    "react-icons": "^3.11.0",
+    "react-ionicons": "^3.1.4",
+    "react-items-carousel": "^2.8.0",
+    "react-player": "^2.6.2",
+    "react-responsive-carousel": "^3.2.10",
+    "react-route-transition": "^1.0.6",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.8",
+    "react-transition-group": "^1.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

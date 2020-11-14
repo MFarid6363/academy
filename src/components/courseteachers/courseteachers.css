@@ -1,0 +1,39 @@
+.Teacher {
+    flex-basis: 30%;
+    margin: 20px;
+    height: 400px;
+    background-color: #03b875;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 5px;
+}
+.Teacher-Content {
+    flex-basis: 70%;
+    background-color:#fbfbfb;
+}
+.Teacher-Content img{
+    width: 100px;
+    height: 100px;
+    border-radius: 55%;
+    margin-top: -40px;
+    box-shadow: 0px 2px 4px #72ffd5;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+.Teacher-Content span{
+    display: block;
+    font-size: 15px;
+    color: #b4b4b4;
+    font-family: 'Krona One', sans-serif
+}
+
+.Teacher-Content .Teacher-Content__Name-Surname {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Dancing Script', cursive;
+    color:#6f6f6f ;
+}
+
+

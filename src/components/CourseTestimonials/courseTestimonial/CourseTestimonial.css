@@ -1,0 +1,92 @@
+.Testimonial-container{
+    padding-top: 5rem;
+}
+
+.Testmonial{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 60vh;
+    align-items: center; 
+    padding: 0 3.7rem 8rem 3.8rem;
+    background-color: #E6E6E6;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    border-bottom: 10px solid #00AEEF;
+    margin-bottom: 20px;
+}
+
+.Client__Image{
+    width: 100px;
+    height: 15vh; 
+    border-radius: 55%;
+    margin-top: -40px;
+    box-shadow: 0px 2px 4px #72ffd5;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+.Client-Image__Image{
+    margin-right: 4px;
+    font-size: 40px;
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    margin-top: -45px;
+    box-shadow: 0px 2px 4px #72ffd5;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+.Client__Name{
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.72px;
+    color: #002958;
+    margin-bottom: 3px;
+}
+.Client__Login{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.48px;
+    color: #212121;
+    margin-bottom: 23px;
+}
+.Client__Type{
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.48px;
+    color: #212121;
+    margin-bottom: 23px;
+}
+.Client__Comments{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.48px;
+    color: #212121;
+}
+@media only screen and (max-width: 470px) {
+
+    .Client__Name{
+        font-size: 20px;
+    }
+    .Client__Company{
+        font-size: 16px;
+    }
+    .Client__Comment{
+        font-size: 12px;
+        text-align: center;
+      
+    }
+    .Testmonial{
+        width: 100%;
+    }
+}

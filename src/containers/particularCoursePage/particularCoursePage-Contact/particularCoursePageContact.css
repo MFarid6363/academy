@@ -1,0 +1,154 @@
+.particularCoursePageContact{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.particularCoursePageContact>*{
+    margin-top: 30px;
+}
+
+.particularCoursePageContact h2{
+    margin-top: 20px;
+}
+
+.particularCoursePageContact__Buttons{
+   display: flex;
+}
+
+.particularCoursePageContact__Buttons button{
+    flex-basis: 30%;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+
+.particularCoursePageContact__Buttons>*:hover{
+    animation: MoveLeft 1s ;
+}
+
+.particularCoursePageContact__Form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.Form__validmessage{
+    visibility: hidden;
+    margin-bottom: 10px;
+
+}
+.Form__invalidmessage{
+    visibility: visible;
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+.particularCoursePageContact__Buttons .particularCoursePageContact__Button-seleceted-button{
+    background-color: #d9dbda;
+    border-color: green;
+    outline: transparent;
+}
+
+
+
+
+.particularCoursePageContact__Form textarea{
+    height: 20vh;
+    padding: 5px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.particularCoursePageContact__Form button {
+    left: 50%;
+    top: 50%;
+   
+    color: #cecd24;
+    text-decoration: none;
+    font-size: 2em;
+    display: inline-block;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    padding: 0.5em 2em;
+    border: 2px solid #cecd24;
+    -webkit-transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  .particularCoursePageContact__Form button::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #cecd24;
+    -webkit-transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: -1;
+  }
+  .particularCoursePageContact__Form button::after {
+    content: "";
+    display: inline-block;
+    background-image: url("https://image.flaticon.com/icons/png/128/109/109617.png");
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  .particularCoursePageContact__Form button:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+  }
+  .particularCoursePageContact__Form button:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    -webkit-transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  .particularCoursePageContact__Form button:hover::after {
+    right: 0;
+    -webkit-transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  
+  .SubmitedMessage,
+  .WrongMessage{
+      display: flex;
+  }
+
+  .SubmitedMessage i,
+  .WrongMessage i{
+    margin-left: 3px;
+}
+
+  .SubmitedMessage{
+      color: green;
+  }
+  .WrongMessage{
+      color: red;
+  }
+
+
+@keyframes MoveLeft{
+    0%{
+        transform: translateY(0px);
+    }
+    
+    50%{
+        transform: translateY(-3px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
