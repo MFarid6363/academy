@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './particularCourse-Main.css'
-import ReactPlayer from 'react-player'
 import axios from 'axios'
+import CourseVideos from '../../../components/Coursevideo/CourseVideos/CourseVideos'
+import AddVideo from '../../../components/Coursevideo/CourseAddVideo/AddVideo'
 
 
 import CourseParticipant from '../../../components/Courseparticipant/CourseParticipant'
@@ -51,17 +52,17 @@ class Sport extends Component {
     
 
     render() {
+        console.log(this.props)
         let accountName=''
         if(this.props.history.location.state.logined ){
             accountName=this.props.history.location.state.accountData.Login.value
         }
         return (
             <div className='Particular-Course' >
-                <video controls autoplay>
-                    <source src="./video/Red_fody.mp4" type="video/mp4"/>
-                </video>
-               <h2>{this.props.history.location.state.course.name}</h2> 
-               <CourseParticipant participants={this.props.history.location.state.course.participants} studentsnum={this.state.studentsnum} teachersnum={this.state.teachersnum} coursename={this.state.Course.name}/>
+                <CourseVideos course={this.props.course}/>
+                {this.props.history.location.state.logined ? this.props.history.location.state.accountData.Activity ==='Teacher' ? <AddVideo course={this.props.course} accountData={this.props.history.location.state.accountData}/> : null : null}
+                <h2>{this.props.history.location.state.course.name}</h2> 
+                <CourseParticipant participants={this.props.history.location.state.course.participants} studentsnum={this.state.studentsnum} teachersnum={this.state.teachersnum} coursename={this.state.Course.name}/>
             </div>
         );
     }
