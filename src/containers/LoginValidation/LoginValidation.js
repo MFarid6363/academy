@@ -34,9 +34,6 @@ class LoginValidation extends Component {
         logined:false,
         wrongData:false
     }
-    componentDidMount(){
-        console.log(this.state.accountData)
-    }
     checkValidity(value,rules){
         let isValid=true;
         if(rules.requeried){
@@ -81,7 +78,6 @@ class LoginValidation extends Component {
         for (const [key] of Object.entries(response.data)) {
             if(this.state.accountData.Login.value===response.data[key].Login){
                 if(this.state.accountData.Password.value===response.data[key].Password){
-                    console.log('succes login')
                     this.setState({accountdetails:response.data[key]})
                     correct=true
                     break

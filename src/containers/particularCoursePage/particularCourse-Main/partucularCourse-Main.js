@@ -52,7 +52,6 @@ class Sport extends Component {
     
 
     render() {
-        console.log(this.props)
         let accountName=''
         if(this.props.history.location.state.logined ){
             accountName=this.props.history.location.state.accountData.Login.value
@@ -61,7 +60,6 @@ class Sport extends Component {
             <div className='Particular-Course' >
                 <CourseVideos course={this.props.course}/>
                 {this.props.history.location.state.logined ? this.props.history.location.state.accountData.Activity ==='Teacher' ? <AddVideo course={this.props.course} accountData={this.props.history.location.state.accountData}/> : null : null}
-                <h2>{this.props.history.location.state.course.name}</h2> 
                 <CourseParticipant participants={this.props.history.location.state.course.participants} studentsnum={this.state.studentsnum} teachersnum={this.state.teachersnum} coursename={this.state.Course.name}/>
             </div>
         );

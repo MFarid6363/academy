@@ -81,7 +81,6 @@ class Courses extends Component {
         }) 
     }
     render () {
-        console.log(this.props.history)
         return (
             <div>
                 {this.state.spinner ? <FullPageSpinner/>:

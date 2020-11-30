@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Route,Switch} from 'react-router-dom'
 import Courses from './containers/Courses/Courses';
-import Users from './containers/Users/Users';
 import MainPage from './containers/mainpage/mainpage';
 
 import ParticularCoursePage from './containers/particularCoursePage/particularPage'
@@ -12,10 +11,8 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        
           <Switch>
                 <Route path='/' exact component={MainPage}/>
-                <Route path="/users" component={Users} />
                 <Route path="/courses" exact component={Courses} />
                 {/* <Route path="/React" exact component={ReactCourse} /> */}
                 {/* <Route path="/Math" exact component={MathCourse} />

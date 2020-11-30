@@ -2,7 +2,6 @@ import React from 'react';
 import './courseteachers.css'
 
 const courseteachers = (props) => {
-    console.log(props.teacher.Gender)
     return (
         <div className='Teacher'>
             <div className='Teacher-Content'>

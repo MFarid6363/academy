@@ -12,8 +12,8 @@ class AddNews extends Component {
                 value:'',
                 validation:{
                     requeried:true,
-                    minLength:3,
-                    maxLength:10
+                    minLength:5,
+                    maxLength:20
                     },
                 valid:false,
                 touched:false,
@@ -22,8 +22,8 @@ class AddNews extends Component {
                 value:'',
                 validation:{
                     requeried:true,
-                    minLength:3,
-                    maxLength:10
+                    minLength:5,
+                    maxLength:20
                     },
                 valid:false,
                 touched:false,
@@ -32,10 +32,9 @@ class AddNews extends Component {
         },
         FormValidity:false,
         accountData:this.props.accountData,
-        submitNews:true
+        submitNews:false
     }
     componentDidMount(){
-        console.log(this.state)
         axios.get('https://academy-4a97f.firebaseio.com/accounts.json').then((response)=>{
             for(let element in response.data){
                 let account={
@@ -103,7 +102,6 @@ class AddNews extends Component {
         let formIsValid=true
         for(let inputId in updated){
             formIsValid = updated[inputId].valid && formIsValid
-            // console.log('bu hammis',updated[inputId].valid)
         }
         
         this.setState({registerData:updated,FormValidity:formIsValid})  
@@ -118,12 +116,12 @@ class AddNews extends Component {
                         <li>
                             <label htmlFor='Title'>Title</label>
                             <textarea id='Title' value={this.state.NewsData.Title.value} onChange={(event)=>this.changeHandler(event)} id='Title'/>
-                            <label className={this.state.NewsData.Title.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Title should be minimum 5 letters</label>
+                            <label className={this.state.NewsData.Title.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Title should be minimum 5 and maximum 20 letters</label>
                         </li>
                         <li>
                             <label  htmlFor='info'>News info</label>
                             <textarea id='Info' value={this.state.NewsData.Info.value} onChange={(event)=>this.changeHandler(event)} id='Info'/> 
-                            <label className={this.state.NewsData.Title.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Info should be minimum 10 letters</label>
+                            <label className={this.state.NewsData.Info.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Info should be minimum 5 and maximum 20 letters</label>
                         </li>
                     </ul>
                     <button disabled={!this.state.FormValidity} onClick={(event)=>this.submitNews(event)} className='AddNews__Button'>Submit news</button>

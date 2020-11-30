@@ -40,6 +40,11 @@
     text-align: center;
     color: #E6E6E6;
 }
+.Empty-comments{
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(240, 88, 88);
+}
 
 @media only screen and (max-width: 1100px) {
     .Testimonials__Carousel{
@@ -49,9 +54,6 @@
 @media only screen and (max-width: 850px) {
     .Testimonials{
         padding: 4rem;
-    }
-    .Testimonials__Footer{
-        
     }
 }
 @media only screen and (max-width: 700px) {

@@ -29,7 +29,6 @@ class ParticularPage extends Component {
         if(!this.props.history.location.state){
             return <Redirect to={'/'}/>
         }
-        console.log(this.props.history)
         return (
             <div>
                 <CourseNav  navigate={this.navigate} page={this.state.page} logined={this.props.history.location.state.logined} history={this.props.history} accountName={this.props.history.location.state.accountData ? this.props.history.location.state.accountData.Login : null}/>
@@ -48,15 +47,18 @@ class ParticularPage extends Component {
                                 <CounseInfo course={this.props.history.location.pathname.slice(9)}/>
                             )
                         case 'News':
-                            if(this.props.history.location.state.logined){
-                            return (
-                                this.props.history.location.state.accountData.Activity ==='Teacher' ? <CourseNews accountData={this.props.history.location.state.accountData} course={this.props.history.location.pathname.slice(9)}/> : <p>To create news you should to be a teacher</p>
-                            )}
-                            else{
-                                return(
-                                    <p>To create news you should to be a teacher</p>
-                                )
-                            }
+                            return(
+                            <CourseNews onSelectLanguage={this.handleLanguage} history={this.props.history} course={this.props.history.location.pathname.slice(9)}/>
+                            )
+                            // if(this.props.history.location.state.logined){
+                            // return (
+                            //     this.props.history.location.state.accountData.Activity ==='Teacher' ? <CourseNews accountData={this.props.history.location.state.accountData} course={this.props.history.location.pathname.slice(9)}/> : <p>To create news you should to be a teacher</p>
+                            // )}
+                            // else{
+                            //     return(
+                            //         <p>To create news you should to be a teacher</p>
+                            //     )
+                            // }
                         case 'Contact':
                             return (
                                 this.props.history.location.state.logined ? <CourseContact accountData={this.props.history.location.state.accountData} course={this.props.history.location.pathname.slice(9)}/> :<div className='Course-Contact__Login-error'>

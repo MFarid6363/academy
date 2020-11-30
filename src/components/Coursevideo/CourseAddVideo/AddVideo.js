@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import Spinner from '../../spinner/spinner'
+import ReactPlayer from "react-player";
 import {BiCheckCircle}  from "react-icons/bi";
 
 class AddVideo extends Component {
@@ -22,7 +23,8 @@ class AddVideo extends Component {
                 validation:{
                     requeried:true,
                     minLength:1,
-                    maxLength:10000
+                    maxLength:10000,
+                    url:true
                     },
                 valid:false,
                 touched:false,
@@ -31,10 +33,19 @@ class AddVideo extends Component {
         },
         FormValidity:false,
         accountData:this.props.accountData,
-        submitNews:true
+        submitVideo:false
     }
+    validURL(str) {
+        var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+          '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+          '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+          '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+          '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+          '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+        return !!pattern.test(str);
+    }
+
     componentDidMount(){
-        console.log(this.state)
         axios.get('https://academy-4a97f.firebaseio.com/accounts.json').then((response)=>{
             for(let element in response.data){
                 let account={
@@ -47,7 +58,7 @@ class AddVideo extends Component {
             }
         })
     }
-    submitNews=(event)=>{
+    submitVideo=(event)=>{
         this.setState({spinner:true})
         event.preventDefault()
         let data={
@@ -60,7 +71,7 @@ class AddVideo extends Component {
         axios.post('https://academy-4a97f.firebaseio.com/courses/'+this.props.course+'/video.json',data).then(()=>{
             this.cleanState()
         })     
-        this.setState({spinner:false,submitNews:true}) 
+        this.setState({spinner:false,submitVideo:true}) 
     }
     cleanState(){
         for (let element in this.state.VideoData){
@@ -84,10 +95,13 @@ class AddVideo extends Component {
         if(rules.maxLength){
             isValid=value.length <= rules.maxLength && isValid
         }
+        if(rules.url){
+            isValid=this.validURL(value) && isValid && ReactPlayer.canPlay(value)
+        }
         return isValid
     }
     changeHandler=(event)=>{
-        this.setState({submitNews:false})
+        this.setState({submitVideo:false})
         const updated={
             ...this.state.VideoData
         }
@@ -102,9 +116,7 @@ class AddVideo extends Component {
         let formIsValid=true
         for(let inputId in updated){
             formIsValid = updated[inputId].valid && formIsValid
-            // console.log('bu hammis',updated[inputId].valid)
         }
-        
         this.setState({registerData:updated,FormValidity:formIsValid})  
     }
     render() {
@@ -122,11 +134,11 @@ class AddVideo extends Component {
                         <li>
                             <label  htmlFor='Link'>Link for video</label>
                             <textarea id='Link' value={this.state.VideoData.Link.value} onChange={(event)=>this.changeHandler(event)} id='Link'/> 
-                            <label className={this.state.VideoData.Title.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Link can't be empty</label>
+                            <label className={this.state.VideoData.Link.valid ? 'Form__validmessage' :'Form__invalidmessage'}>Not valid Link</label>
                         </li>
                     </ul>
-                    <button disabled={!this.state.FormValidity} onClick={(event)=>this.submitNews(event)} className='AddNews__Button'>Publish video</button>
-                    {this.state.submitNews ? <h2 className='SubmitedMessage'>Video published <i><BiCheckCircle/></i></h2>: null}
+                    <button disabled={!this.state.FormValidity} onClick={(event)=>this.submitVideo(event)} className='AddNews__Button'>Publish video</button>
+                    {this.state.submitVideo ? <h2 className='SubmitedMessage'>Video published <i><BiCheckCircle/></i></h2>: null}
                 </form>
                 }
             </div>

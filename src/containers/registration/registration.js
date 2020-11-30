@@ -90,7 +90,6 @@ class registration extends Component {
     makeRegistration=()=>{
         this.setState({spinner:true,BusyLogin:false})
         axios.get('https://academy-4a97f.firebaseio.com/accounts.json').then((response)=>{
-            console.log(response.data)
             for(let accounts in response.data){
                 if(this.state.registerData.Login.value === response.data[accounts].Login){
                     this.setState({BusyLogin:true})
@@ -111,19 +110,21 @@ class registration extends Component {
                         image:this.state.image
                     }
                     this.cleanState()
-                    console.log(this.state)
                     axios.post('https://academy-4a97f.firebaseio.com/accounts.json',account).then(response=> {
                         this.setState({spinner:false,FormValidity:false})
                         })
                         .catch(()=>{
                             this.setState({spinner:false})
-                            console.log('error')}
+                            alert('Some error occured please refresh the page')
+                        }
                         )
             }
             else{
                 this.setState({spinner:false,FormValidity:false})
                 this.cleanState()
             }
+        }).catch(()=>{
+            alert('Some error occured please refresh the page')
         })
     }
     cleanState(){
@@ -161,7 +162,6 @@ class registration extends Component {
         let updatedFormElement={
             ...updated[event.target.id]
         }
-        console.log(this.state.registerData.Subject.value)
         
         updatedFormElement.value=event.target.value
         updatedFormElement.valid=this.checkValidity(updatedFormElement.value,updatedFormElement.validation)
@@ -171,7 +171,6 @@ class registration extends Component {
         let formIsValid=true
         for(let inputId in updated){
             formIsValid = updated[inputId].valid && formIsValid
-            // console.log('bu hammis',updated[inputId].valid)
         }
         
         this.setState({registerData:updated,FormValidity:formIsValid})  

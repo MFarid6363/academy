@@ -5,7 +5,6 @@ import './New.css'
 const newComp = (props) => {
     const [image,setimage]=useState('')
     useEffect(() => {
-        console.log(props.newcomp)
         axios
           .get('https://academy-4a97f.firebaseio.com/accounts.json')
           .then(response =>{

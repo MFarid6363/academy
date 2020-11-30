@@ -1,3 +1,17 @@
 .particularCourseInfo{
     background-color: #002958;
+    height: 120vh;
+}
+.particularCourseInfo__Course-info,
+.particularCourseInfo__general{
+    color: white;
+    font-size: 18px;
+}
+.Course-Section{
+    color: rgba(255, 255, 255, 0.781);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.particularCourseInfo__Course-info{
+    margin-bottom: 10px;
 }

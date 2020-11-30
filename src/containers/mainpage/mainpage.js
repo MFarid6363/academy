@@ -32,9 +32,6 @@ class MainPage extends Component {
         }
 
     }
-    openUsers=()=>{
-        this.props.history.push('/users')
-    }
     openRegister=()=>{
         this.setState({
             register:true,
@@ -75,15 +72,12 @@ class MainPage extends Component {
         if(langValue){
             this.setState({loginWindow:false,logined:true,accountData:account,image:image})
         }
-        console.log(this.state.accountData)
     }
     logOut = () => {
         this.setState({logined:false,accountData:{}})
         this.props.history.replace({
             state:{}
         })
-        console.log(this.props.history)
-
     }
     registrSucces = (registred)=>{
         if(registred){
@@ -111,7 +105,6 @@ class MainPage extends Component {
                 transitionLeave={false}>
                     <div className='MainPage'>
                         <ul className='MainPage__Navigation'>
-                            <li><button onClick={this.openUsers}>Users</button></li>
                             <li><button onClick={this.openCourses}>Courses</button></li>
                             {this.state.logined ? null :<li><button onClick={this.openRegister}>Register</button></li>}
                             {this.state.logined ? <li><AccountBar accountName={this.state.accountData.Login}/></li> : null}

@@ -40,27 +40,14 @@ const testimonials = (props) => {
         }
         setTestimonials(finaltestimonial);
         setspinner(false);
-        smth()
       });
+      
   }
-  
+  setspinner(false)
   
 }, [TestimonialsState !== null]);
 
 
-    const smth = () => {
-     
-  
-    //   let amountofCards=3
-    //   let dimensions=useWindowDimensions()
-    //   if(dimensions.width<1100){
-    //       amountofCards=2
-    //     }
-  
-    //   if(dimensions.width<530){
-    //     amountofCards=1
-    //   }
-    }
 
     return (
     
@@ -69,8 +56,9 @@ const testimonials = (props) => {
             
             TestimonialsState ?
             <div className='Testimonials '>
-
+                
                 <div className='Testimonials__Carousel'>
+                    
                     <Carousel
                         infiniteLoop={true}
                         slidesToScroll={1}
@@ -81,8 +69,8 @@ const testimonials = (props) => {
                         //disableSwipe on touch device? 
                         >
                         {
-                        TestimonialsState.map(testi=>{
-                          return <Testimonial key={testi.id} AccData={testi}/>
+                        TestimonialsState.map((testi,index)=>{
+                          return <Testimonial key={index} AccData={testi}/>
                         })}
                     </Carousel>
                 </div>
@@ -93,7 +81,7 @@ const testimonials = (props) => {
                         <button  onClick={()=>{setActiveItemIndex(activeItemIndex+1)}} className='Slider-manupulator__Button  Slider-manupulator__Button_Testimonials  Slider-manupulator__Button_right'>{<FontAwesome.FaGreaterThan className='falessThan'/>}</button>
                     </div>
                 </div>
-            </div>:<p>There is no Comments</p>
+            </div>:<p className='Empty-comments'>There is no Comments</p>
             }
         </div>
     );

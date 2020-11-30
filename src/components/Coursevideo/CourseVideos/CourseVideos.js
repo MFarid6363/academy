@@ -12,12 +12,10 @@ class Videos extends Component {
         this.setState({spinner:true})
         axios.get('https://academy-4a97f.firebaseio.com/courses/' + this.props.course + '/video.json').then((response)=>{
             const videos=[]
-            console.log(response)
             for(let element in response.data){
                 videos.push(response.data[element])
             }
             this.setState({videos:videos})
-            console.log(this.state.video)
         })
         this.setState({spinner:false})
     }

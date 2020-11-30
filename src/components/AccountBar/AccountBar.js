@@ -8,7 +8,6 @@ import axios from 'axios'
 class AccountBar extends Component {
     state={
         file:this.props.image,
-        // neededData:''
     }
     
     componentDidMount(){
